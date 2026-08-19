@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "redirects": [
+    { "source": "/", "destination": "/WIN-ZYME", "statusCode": 302 }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
