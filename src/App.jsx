@@ -8,7 +8,7 @@ export default function App() {
   const videoRef = useRef(null);
   const [currentProduct, setCurrentProduct] = useState(() => {
     const pathname = window.location.pathname.split('/').pop() || '';
-    return getProductForSlug(pathname) || findProductBySlug('WIN-ZYME');
+    return getProductForSlug(pathname) || findProductBySlug('BLACK-HORSE');
   });
 
   useEffect(() => {
@@ -16,8 +16,8 @@ export default function App() {
       const pathname = window.location.pathname.split('/').pop() || '';
       const product = getProductForSlug(pathname);
       if (!product) {
-        window.history.replaceState({}, '', '/WIN-ZYME');
-        setCurrentProduct(findProductBySlug('WIN-ZYME'));
+        window.history.replaceState({}, '', '/BLACK-HORSE');
+        setCurrentProduct(findProductBySlug('BLACK-HORSE'));
       } else {
         setCurrentProduct(product);
       }
@@ -28,8 +28,8 @@ export default function App() {
       const pathname = window.location.pathname.split('/').pop() || '';
       const product = getProductForSlug(pathname);
       if (!product) {
-        window.history.replaceState({}, '', '/WIN-ZYME');
-        setCurrentProduct(findProductBySlug('WIN-ZYME'));
+        window.history.replaceState({}, '', '/BLACK-HORSE');
+        setCurrentProduct(findProductBySlug('BLACK-HORSE'));
       } else {
         setCurrentProduct(product);
       }
@@ -216,34 +216,15 @@ export default function App() {
                 <span className="text-lg">🏭</span>
               </div>
               <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Manufactured By:</div>
-                <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Astra Agritech Private Limited</div>
+                <div className="text-[#d9c98f] text-sm">Manufactured &amp; Marketed By:</div>
+                <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">ESK Techno Corporation</div>
                 <div className="text-white/90 text-xs sm:text-sm mt-0.5">
-                  Shed No.10-22, Plot No.25/a,<br/>
-                  Survey No.35, Block No.9, Tsiic Phase-I, IDA,<br/>
-                  Cherlapalle(V), Kapra(M), Medchal-Malkajigiri District-500051
+                  No.20, 1st Main Road, Kaveri Layout,<br/>
+                  Doddabettahalli, Vidyaranyapura Post,<br/>
+                  Bangalore-560097, Karnataka
                 </div>
-                <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 6302358215</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Email: astraagritech@gmail.com</div>
-              </div>
-            </div>
-          </StarBorder>
-          <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
-            <div className="flex items-start">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
-                <span className="text-lg">🏬</span>
-              </div>
-              <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Marketed By:</div>
-                <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Astra Agritech Private Limited</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">
-                  Door No. C-1/A, Ward No.16,<br/>
-                  Ruanagudi Road, Near SLN Mall,<br/>
-                  City Press Compound, Ballari,<br/>
-                  Karnataka-583101
-                </div>
-                <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 6302358215</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Email: astraagritech@gmail.com</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9632197140</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Email: esktechnocorporation@gmail.com</div>
               </div>
             </div>
           </StarBorder>
@@ -254,7 +235,8 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Customer Care</div>
-                <div className="text-white/90 text-sm sm:text-base">+91 6302358215</div>
+                <div className="text-white/90 text-sm sm:text-base">+91 9632197140</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Email: esktechnocorporation@gmail.com</div>
               </div>
             </div>
           </StarBorder>

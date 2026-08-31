@@ -1,6 +1,6 @@
 export const PRODUCTS = [
   {
-    brand: 'ASTRA SUPER HUMIC',
+    brand: 'BLACK HORSE',
     gazette: '16th February, 2026 S.O. 876(E)',
     specification: 'Potassium Humate 49% (Powder)',
     category: 'Humic Acid and Fulvic Acid  and their Derivatives',
@@ -18,202 +18,264 @@ export const PRODUCTS = [
     ]
   },
   {
-    brand: 'ASTRA LEO PLUS GRANUNES',
-    gazette: '16th February, 2026 S.O. 876(E)',
-    specification: 'Humic Acid 1.5% (Granules)',
-    category: 'Humic Acid and Fulvic Acid  and their Derivatives',
+    brand: 'ROOT MAX',
+    gazette: '12th September, 2024 S.O. 3922(E).',
+    specification: 'Humates and Fulvates - 22% (Liquid)',
+    category: 'Humic Acid and Fulvic Acid and their Derivatives',
     composition: [
-      '(i) Humic acid (as Potassium humate obtained from Leonardite mineral source) per cent. by weight, minimum 1.5',
-      '(ii) Bentonite per cent. by weight, maximum  98.5',
-      '(iii) Total (per cent.) 100'
+      '(i) Total water soluble humates and fulvates per cent. weight by volume, minimum 22',
+      '(ii) pH (1:5 aqueous solution) 9.0 (min)',
+      '(iii) Specific gravity 1.05'
     ],
-    crops: ['Chilli'],
+    crops: ['Ground nut'],
     dosage: [
-      'Two soil applications at 30 kg/ha'
+      'Two soil applications at 1.25 l/ha.'
     ]
   },
   {
-    brand: 'ASTRA A GOLD',
-    gazette: '26th May, 2025 S.O. 2346 (E)',
-    specification: 'Humic Acid 6% (Liquid)',
-    category: 'Humic Acid and Fulvic Acid  and their Derivatives',
+    brand: 'HUMI PRO',
+    gazette: '16th February, 2026 S.O. 876(E).',
+    specification: 'Humates (12.5%) (Liquid)',
+    category: 'Humic Acid and Fulvic Acid and their Derivatives',
     composition: [
-      '(i)  Humic acid (as Potassium humate obtained from Leonardite mineral source) per cent. by weight, minimum 6.0',
-      '(ii)  Water per cent. by weight QS',
-      '(iii)  Total (per cent.) 100'
+      '(i) Humic acid (Source: American Leonardite) per cent. by weight, minimum 10.0',
+      '(ii) Fulvic acid (Source: American Leonardite) per cent. by weight, minimum 2.5',
+      '(iii) Tetrapotassium pyrophosphate per cent. by weight, minimum 0.9',
+      '(iv) Potassium hydroxide 50% solution per cent. by weight, minimum 10.0',
+      '(v) Alcoxylated fatty acid ester on vegetable base per cent. by weight, minimum 0.7',
+      '(vi) Water per cent. by weight QS',
+      '(vii) Total (per cent.) 100'
+    ],
+    crops: ['Green gram'],
+    dosage: [
+      'Two soil applications at 5.0 l/ha.'
+    ]
+  },
+  {
+    brand: 'BLACK GRAN',
+    gazette: '16th February, 2026 S.O. 876(E).',
+    specification: 'Humic Acid 51 % (Granular)',
+    category: 'Humic Acid and Fulvic Acid and their Derivatives',
+    composition: [
+      '(i) Humic acid (Source: American Leonardite) per cent. by weight, minimum 51.00',
+      '(ii) Fulvic acid per cent. by weight, minimum 10.00',
+      '(iii) Potassium as K2O per cent. by weight, minimum 16.00',
+      '(iv) Tetrapotassium pyrophosphate per cent. by weight, minimum 4.50',
+      '(v) Lignosulphonic acid per cent. by weight, minimum 14.22',
+      '(vi) Alcoxylated fatty acid ester on vegetable base per cent. by weight, minimum 0.36',
+      '(vii) Water per cent. by weight, maximum 3.92',
+      '(viii) Total (per cent.) 100'
+    ],
+    crops: ['Green gram'],
+    dosage: [
+      'Two soil applications at 1.5 kg/ha'
+    ]
+  },
+  {
+    brand: 'HIGH POWER',
+    gazette: '26th May, 2025 S.O. 2346 (E).',
+    specification: 'Humic and Fulvic acid 25.05% (Liquid)',
+    category: 'Humic Acid and Fulvic Acid and their Derivatives',
+    composition: [
+      '(i) Humic and Fulvic acid per cent. by weight, minimum (Source: Leonardite) 25.05',
+      '(ii) Water per cent. by weight 74.95',
+      '(iii) Total (per cent.) 100'
     ],
     crops: ['Tomato'],
     dosage: [
-      'Three foliar applications at 1.25 l/ha'
+      'Five equal soil drench applications at 10 l/ha'
     ]
   },
   {
-    brand: 'ASTRA ZET',
-    gazette: '16th February, 2026 S.O. 876(E)',
-    specification: 'Ascophyllum nodosum 15% (Liquid)',
+    brand: 'MAXIMUS',
+    gazette: '13th August, 2025 S.O. 3741(E).',
+    specification: 'Humic acid and Fulvic acid 85% (Powder)',
+    category: 'Humic Acid and Fulvic Acid and their Derivatives',
+    composition: [
+      '(i) Humic acid (Source: Leonardite) per cent. by weight, minimum 70',
+      '(ii) Fulvic acid per cent. by weight, minimum 15',
+      '(iii) Potassium hydroxide per cent. by weight 15',
+      '(iv) Total (per cent.) 100'
+    ],
+    crops: ['Tomato'],
+    dosage: [
+      'Three soil applications at 1250 g/ha'
+    ]
+  },
+  {
+    brand: 'ROOT GROW',
+    gazette: '13th August, 2025 S.O. 3742(E)',
+    specification: 'Humic acid and Fulvic acid 19.5 % (Liquid)',
+    category: 'Humic Acid and Fulvic Acid and their Derivatives',
+    composition: [
+      '(i) Humic acid (Source: Leonardite) per cent. by weight, minimum 18',
+      '(ii) Fulvic acid per cent. by weight, minimum 1.5',
+      '(iii) Alkyl phenol ethoxylate per cent. by weight, minimum 10',
+      '(iv) Fatty alcohol ethoxylate per cent. by weight, minimum 10',
+      '(v) Water per cent. by weight, minimum 60.5',
+      '(vi) Total (per cent.) 100'
+    ],
+    crops: ['Chilli', 'Potato', 'Rice', 'Cotton', 'Soybean', 'Cumin', 'Onion'],
+    dosage: [
+      'Chilli: One foliar application at 1250 ml/ha',
+      'Potato: One foliar application at 1250 ml/ha',
+      'Rice: One foliar application at 1250 ml/ha',
+      'Cotton: One soil application at 1250 ml/ha',
+      'Cumin: One foliar application at 1250 ml/ha',
+      'Onion: One foliar application at 1250 ml/ha',
+      'Soybean: Two foliar applications at 1250 ml/ha'
+    ]
+  },
+  {
+    brand: 'PHYTO PURE',
+    gazette: '13th August, 2025 S.O. 3743(E)',
+    specification: 'Seaweed (Ascophyllum nodosum) extract 99.52 % (Liquid)',
     category: 'Seaweed Extract',
     composition: [
-      '(i) Seaweed (Ascophyllum nodosum) extract per cent. by weight, minimum 15',
-      '(ii) Potassium sorbate per cent. by weight, minimum 0.28',
-      '(iii) Citric acid per cent. by weight, minimum 1.91',
-      '(iv) Water per cent. by weight, maximum 82.81',
-      '(v)  Total (per cent.) 100'
+      '(i) Seaweed (Ascophyllum nodosum) extract per cent. by weight, minimum 99.52',
+      '(ii) Sodium metabisulphite/ potassium sorbate per cent. by weight, minimum 0.48',
+      '(iii) Total (per cent.) 100'
     ],
-    crops: ['Green gram', 'Tomato', 'Rice'],
+    crops: ['Grapes', 'Cotton'],
     dosage: [
-      'Green gram: Two foliar applications at 1500 ml/ha',
-      'Rice: Two foliar applications at 1000 ml/ha',
-      'Tomato: Two foliar applications at 625 ml/ha'
+      'Grapes: Three foliar applications at 300 ml/ha',
+      'Cotton: Three foliar applications at 300 ml/ha'
     ]
   },
   {
-    brand: 'ASTRA ROCKY GRANULES',
-    gazette: '16th February, 2026 S.O. 876(E)',
-    specification: 'Sargassum tenerrimum 2%( Granular)',
+    brand: 'OCEAN GROW',
+    gazette: '13th August, 2025 S.O. 3741(E)',
+    specification: 'Ascophyllum nodosum 20% (liquid)',
     category: 'Seaweed Extract',
     composition: [
-      '(i) Seaweed (Sargassum tenerrimum) extract per cent. by weight, minimum 2.0',
-      '(ii) Phytase as adjuvant per cent. by weight, maximum 1.0',
-      '(iii) Bentonite per cent. by weight, maximum 87',
-      '(iv) Moisture per cent. by weight, maximum 10',
-      '(v) Total (per cent.) 100'
+      '(i) Seaweed (Ascophyllum nodosum) extract per cent. by weight, minimum 20',
+      '(ii) Sodium salt of Propyl Paraben per cent. by weight, minimum 0.25',
+      '(iii) Water per cent. by weight 79.75',
+      '(iv) Total (per cent.) 100'
     ],
-    crops: ['Paddy', 'Tomato'],
+    crops: ['Chilli', 'Rice', 'Cotton', 'Bengal gram', 'Tomato', 'Soybean', 'Wheat'],
     dosage: [
-      'Paddy: One soil application at 12.5 kg/ha',
-      'Tomato: One soil application at 12.5 kg/ha'
+      'Chilli: Four foliar applications at 625 ml/ha',
+      'Rice: One soil application at 750 ml/ha',
+      'Cotton: Two foliar applications at 750 ml/ha',
+      'Bengal gram: Three foliar applications at 750 ml/ha',
+      'Tomato: Three foliar applications at 1000 ml/ha',
+      'Soybean: Two foliar applications at 750 ml/ha',
+      'Wheat: Two foliar applications at 1000 ml/ha'
     ]
   },
   {
-    brand: 'ASTRA ALLWYN',
-    gazette: '26th May, 2025 S.O. 2346 (E)',
-    specification: 'Spirulina 10% (Liquid)',
-    category: 'Botanical Extract',
+    brand: 'GREEN WAVE',
+    gazette: '',
+    specification: 'Seaweed(Ascophyllum nodosum) extract 30% (Liquid)',
+    category: 'Seaweed Extract',
     composition: [
-      '(i)  Spirulina powder per cent. by weight, minimum 10',
-      '(ii)  Propylene glycol per cent. by weight, minimum 5',
-      '(iii) Lignin sulfonate per cent. by weight, minimum 5',
-      '(iv)  Polysaccharide per cent. by weight, minimum 0.1',
-      '(v)  Citric acid per cent. by weight, minimum 0.1',
-      '(vi)  Water per cent. by weight QS',
-      '(vii) Total (per cent.) 100'
-    ],
-    crops: ['Chilli', 'Tomato'],
-    dosage: [
-      'Two foliar sprays at 750 ml/ha'
-    ]
-  },
-  {
-    brand: 'ASTRA HY FY',
-    gazette: '26th May, 2025 S.O. 2346 (E)',
-    specification: 'Mixture of seaweed extract and algal extract (Liquid)',
-    category: 'Mixed Formulations',
-    composition: [
-      '(i)  Sargassum wightii extract per cent. weight by volume, minimum 2.2',
-      '(ii)  Arthrospira platensis extract per cent. weight by volume, minimum 3.3',
-      '(iii) Water per cent. by weight QS',
+      '(i) Seaweed (Ascophyllum nodosum) extract per cent. by weight, minimum 30.0',
+      '(ii) Emulsifier (AF 711) per cent. by weight, maximum 20.0',
+      '(iii) Water per cent. by weight, maximum 50.0',
       '(iv) Total (per cent.) 100'
     ],
     crops: ['Brinjal'],
     dosage: [
-      'Two foliar applications at 500 mL/ha'
+      'Three foliar applications at 625 ml/ha'
     ]
   },
   {
-    brand: 'ASTRA SAMRUDDHI GRANULES',
-    gazette: '26th May, 2025 S.O. 2346 (E)',
-    specification: 'Mixture of Humic acid and Seaweed extract (Granules)',
+    brand: 'B-SHIELD',
+    gazette: '13th August, 2025 S.O. 3741(E)',
+    specification: 'Vitamin B3 (Nicotinamide) 3.25% (liquid)',
+    category: 'Vitamins',
+    composition: [
+      '(i) Vitamin B3 – Niacinamide (Nicotinamide) (synthetic) per cent. by weight, minimum 3.25',
+      '(ii) Emulsifier (Nonyl Phenol Ethoxylate) per cent. by weight, minimum 16.75',
+      '(iii) Solvent (Dimethyl sulfoxide) per cent. by weight, minimum 80',
+      '(iv) Total (per cent.) 100'
+    ],
+    crops: ['Tomato'],
+    dosage: [
+      'Two foliar applications at 12.5 ml/ha'
+    ]
+  },
+  {
+    brand: 'COMPLEX',
+    gazette: '12th September, 2024 S.O. 3922(E)',
+    specification: 'Mixture of Humic Acid, Amino Acid, Vitamins and Bio-chemicals (powder)',
     category: 'Mixed Formulations',
     composition: [
-      '(i)  Kappaphycus alvarezii and Sargassum swartzii in ratio of 1:1, extract per cent. by weight, minimum 3.3',
-      '(ii)  Humic acid powder as potassium humate (Source: Leonardite) per cent. by weight, minimum 1.0',
-      '(iii) Dolomite per cent. by weight, maximum 95.7',
-      '(iv) Total 100'
+      '(i) Humic Acid per cent. by weight, minimum 30',
+      '(ii) Amino Acid (Glycine) per cent. by weight , minimum 7',
+      '(iii) Myoinositol per cent. by weight , minimum 2',
+      '(iv) Vitamin C per cent by weight , minimum 12.0',
+      '(v) Vitamin E per cent by weight , minimum 0.2',
+      '(vi) pH (1% aqueous solution) 5.0 – 6.5',
+      '(vii) Total organic carbon per cent by weight , minimum 25'
     ],
-    crops: ['Tomato'],
+    crops: ['Okra'],
     dosage: [
-      'Two soil applications at 25 kg/ha'
+      'Two soil applications at 250g/ha.'
     ]
   },
   {
-    brand: 'ASTRA MYTA',
-    gazette: '26th May, 2025 S.O. 2346 (E).',
-    specification: 'Protein hydrolysate 25% (Plant Source) (Liquid)',
-    category: 'Protein Hydrolysates and Amino Acids',
-    composition: [
-      '(i)  Protein hydrolysates derived from Glycine max and Zea mays in ratio of 5.5: 4.5 through enzymatic (food grade Alcalase) hydrolysis per cent. by weight, minimum 25',
-      '(ii)  Water per cent. by weight QS',
-      '(iii) Total (per cent.) 100'
-    ],
-    crops: ['Green gram'],
-    dosage: [
-      'Two foliar applications at 1.25 l/ha'
-    ]
-  },
-  {
-    brand: 'ASTRA TEXA',
+    brand: 'MARINUS GOLD',
     gazette: '26th May, 2025 S.O. 2346 (E)',
-    specification: 'Protein hydrolysate (Amino acids 10%) (Plant Source)(Liquid)',
-    category: 'Protein Hydrolysates and Amino Acids',
+    specification: 'Mixture of Seaweed extract; Humic and Fulvic acid, Amino acids and Vitamins (Liquid)',
+    category: 'Mixed Formulations',
     composition: [
-      '(i)  Amino acids derived from Maize seeds / grains (starch removed gluten through acid hydrolysis) percent. weight by volume, minimum 10',
-      '(ii)  Polysorbate 80 per cent. weight by volume, minimum 2',
-      '(iii) Sulphuric acid per cent. weight by volume, minimum 3',
-      '(iv)  Water per cent. by weight QS',
-      '(v) Total (per cent.) 100'
+      '(i) Sargassum wightii extract per cent. by weight, minimum 20',
+      '(ii) Glycine per cent. by weight, minimum 10',
+      '(iii) Potassium fulvic humate per cent. by weight, minimum (Source: Leonardite) 10',
+      '(iv) Vitamin C per cent. by weight, minimum 2.0',
+      '(v) Water per cent. by weight QS',
+      '(vi) Total (per cent.) 100'
     ],
-    crops: ['Chilli'],
+    crops: ['Cotton'],
     dosage: [
-      'Two foliar applications at 750 ml/ha'
+      'Two foliar applictaions at 2 l/ha'
     ]
   },
   {
-    brand: 'ASTRA SANKALP GRANULES',
+    brand: 'BLACK WAVE',
     gazette: '26th May, 2025 S.O. 2346 (E)',
-    specification: 'Protein hydrolysate 1.5% (Plant Source) (Granules)',
-    category: 'Protein Hydrolysates and Amino Acids',
+    specification: 'Mixture of Humic acid and Seaweed extract (Powder)',
+    category: 'Mixed Formulations',
     composition: [
-      '(i)  Protein hydrolysate derived from defatted soybean seed flour by enzymatic (Papain) hydrolysis per cent. by weight, minimum 1.5',
-      '(ii)  Bentonite per cent. by weight, maximum 98.5',
+      '(i) Humic acid powder as potassium humate (Source: Leonardite) per cent. by weight, minimum 80',
+      '(ii) Kappaphycus alvarezii and Sargassum swartzii in ratio of 1:1; extract water soluble powder per cent. by weight, minimum 20',
       '(iii) Total (per cent.) 100'
     ],
     crops: ['Tomato'],
     dosage: [
-      'Two soil applications at 40 kg/ha'
+      'Three foliar applications at 1.25 kg/ha'
     ]
   },
   {
-    brand: 'ASTRA ROVER',
+    brand: 'NITRO PEPT',
     gazette: '26th May, 2025 S.O. 2346 (E).',
-    specification: 'Protein hydrolysate (Amino acids 20 %) (Plant source)(Liquid)',
+    specification: 'Protein hydrolysate 62.1% (Animal Source) (Liquid)',
     category: 'Protein Hydrolysates and Amino Acids',
     composition: [
-      '(i)  Protein hydrolysate (Microbial fermentation) per cent. by weight, minimum:',
-      '      a. sugarbeet molasses and 87.1',
-      '      b. corn/ wheat glucose syrups 12.4',
-      '(ii)  Octhilinone as preservatives per cent. by weight, minimum 0.3',
-      '(iii) Polysiloxanes as antifoam agent per cent. by weight, minimum 0.2',
-      '(iv) Total (per cent.) 100'
-    ],
-    crops: ['Soyabean'],
-    dosage: [
-      'Two foliar applications at 2 l/ha'
-    ]
-  },
-  {
-    brand: 'ASTRA KAALA',
-    gazette: '26th May, 2025 S.O. 2346 (E).',
-    specification: 'Protein hydrolysate 16.9% (Plant Source) (Liquid)',
-    category: 'Protein Hydrolysates and Amino Acids',
-    composition: [
-      '(i)  Protein hydrolysate from seeds of Glycine max and Zea mays in ratio of 5.5: 4.5 through enzymatic (food grade Alcalase) per cent. by weight, minimum 16.90',
-      '(ii)  Potassium sorbate and Vegetable base fatty acid  per cent. by weight, minimum 21.00',
-      '(iii) Water per cent. by weight QS',
-      '(iv) Total (per cent.) 100'
+      '(i) Protein hydrolysates obtained from animal source (Hair and Skin of Boss taurus) through acid hydrolysis per cent. by weight, minimum 62.1',
+      '(ii) Water per cent. by weight QS',
+      '(iii) Total (per cent.) 100'
     ],
     crops: ['Green gram'],
     dosage: [
-      'Two foliar applications at 1.5 l/ha'
+      'Two foliar sprays at 1.25 l/ha'
+    ]
+  },
+  {
+    brand: 'VINAGLU',
+    gazette: '26th May, 2025 S.O. 2346 (E).',
+    specification: 'Vinasse residue(Glutamic acid 18%) (Liquid)',
+    category: 'Protein Hydrolysates and Amino Acids',
+    composition: [
+      '(i) Vinasse, residue of fermentation per cent. by weight, minimum 65',
+      '(ii) Water per cent. by weight QS',
+      '(iii) Total (per cent.) 100'
+    ],
+    crops: ['Green gram'],
+    dosage: [
+      'Two foliar applications at 50 ml/ha'
     ]
   }
 ];
@@ -225,9 +287,7 @@ export const SLUG_TO_BRAND = PRODUCTS.reduce((acc, product) => {
   acc[hyphenated] = product.brand;
   acc[encoded] = product.brand;
   return acc;
-}, {
-  'WIN-ZYME': 'ASTRA SUPER HUMIC'
-});
+}, {});
 
 export function findProductBySlug(slug) {
   if (!slug) return PRODUCTS[0];
