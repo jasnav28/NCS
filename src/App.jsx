@@ -5,10 +5,11 @@ import { PRODUCTS, findProductBySlug, getProductForSlug } from './productsData.j
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
-  const videoRef = useRef(null);
+  const introVideoRef = useRef(null);
+  const headerVideoRef = useRef(null);
   const [currentProduct, setCurrentProduct] = useState(() => {
     const pathname = window.location.pathname.split('/').pop() || '';
-    return getProductForSlug(pathname) || findProductBySlug('BLACK-HORSE');
+    return getProductForSlug(pathname) || PRODUCTS[0];
   });
 
   useEffect(() => {
@@ -16,8 +17,7 @@ export default function App() {
       const pathname = window.location.pathname.split('/').pop() || '';
       const product = getProductForSlug(pathname);
       if (!product) {
-        window.history.replaceState({}, '', '/BLACK-HORSE');
-        setCurrentProduct(findProductBySlug('BLACK-HORSE'));
+        setCurrentProduct(PRODUCTS[0]);
       } else {
         setCurrentProduct(product);
       }
@@ -28,8 +28,7 @@ export default function App() {
       const pathname = window.location.pathname.split('/').pop() || '';
       const product = getProductForSlug(pathname);
       if (!product) {
-        window.history.replaceState({}, '', '/BLACK-HORSE');
-        setCurrentProduct(findProductBySlug('BLACK-HORSE'));
+        setCurrentProduct(PRODUCTS[0]);
       } else {
         setCurrentProduct(product);
       }
@@ -44,13 +43,42 @@ export default function App() {
   }, [currentProduct]);
 
   useEffect(() => {
-    if (showIntro && videoRef.current) {
-      const video = videoRef.current;
-      video.muted = false;
-      video.play().catch((error) => {
-        console.log('Autoplay with sound failed, but video will play muted:', error);
-      });
+    const playUnmuted = (videoEl) => {
+      if (!videoEl) return;
+      videoEl.muted = false;
+      const playPromise = videoEl.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log('Unmuted playback requires user interaction or policy allowance:', error);
+        });
+      }
+    };
+
+    if (showIntro && introVideoRef.current) {
+      playUnmuted(introVideoRef.current);
     }
+    if (headerVideoRef.current) {
+      playUnmuted(headerVideoRef.current);
+    }
+
+    const handleUserInteraction = () => {
+      if (introVideoRef.current) {
+        introVideoRef.current.muted = false;
+        introVideoRef.current.play().catch(() => {});
+      }
+      if (headerVideoRef.current) {
+        headerVideoRef.current.muted = false;
+        headerVideoRef.current.play().catch(() => {});
+      }
+    };
+
+    window.addEventListener('click', handleUserInteraction, { once: true });
+    window.addEventListener('touchstart', handleUserInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('click', handleUserInteraction);
+      window.removeEventListener('touchstart', handleUserInteraction);
+    };
   }, [showIntro]);
 
   return (
@@ -59,16 +87,16 @@ export default function App() {
       {showIntro && (
         <div className="fixed inset-0 z-[200] bg-black flex items-center justify-center">
           <video
-            ref={videoRef}
+            ref={introVideoRef}
             className="max-h-screen w-auto"
             src="/intro take 4.mp4"
             autoPlay
+            loop
             muted={false}
             playsInline
             preload="auto"
             poster="/new.jpeg"
             controls
-            onEnded={() => setShowIntro(false)}
           />
           <button
             className="absolute top-4 right-4 px-4 py-2 rounded-md bg-white/10 border border-white/30 text-white hover:bg-white/20"
@@ -88,12 +116,14 @@ export default function App() {
       <header className="pt-0 sm:pt-0 mt-6 sm:mt-8 pb-6 text-center select-none">
         <div className="mx-auto w-[320px] sm:w-[500px] max-w-[92vw] h-[200px] sm:h-[260px] rounded-2xl bg-white/8 border border-white/20 backdrop-blur-md overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
             <video 
+              ref={headerVideoRef}
               src="/lo.mp4" 
               className="w-full h-full object-cover rounded-2xl bg-white/8 backdrop-blur-md ring-1 ring-white/20 shadow-inner" 
               autoPlay 
               loop 
-              muted
+              muted={false}
               playsInline 
+              preload="auto"
             />
           </div>
         <div className="mt-2 text-xs sm:text-sm text-white font-semibold tracking-wide">Bio‑Stimulant Registration Details</div>
@@ -216,15 +246,35 @@ export default function App() {
                 <span className="text-lg">🏭</span>
               </div>
               <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Manufactured &amp; Marketed By:</div>
-                <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">ESK Techno Corporation</div>
+                <div className="text-[#d9c98f] text-sm">Manufactured By:</div>
+                <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Niyach Crop Sciences</div>
                 <div className="text-white/90 text-xs sm:text-sm mt-0.5">
-                  No.20, 1st Main Road, Kaveri Layout,<br/>
-                  Doddabettahalli, Vidyaranyapura Post,<br/>
-                  Bangalore-560097, Karnataka
+                  Plot No.3, Survey No.18, PNR Godowns,<br/>
+                  Back Side Pindi Pulla Reddy Gardens,<br/>
+                  Bairamaleguda(V), Saroornagar(M),<br/>
+                  Rangareddy District - 500079
                 </div>
-                <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9632197140</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Email: esktechnocorporation@gmail.com</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 6360638457</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: niyachcropscienceskar@gmail.com</div>
+              </div>
+            </div>
+          </StarBorder>
+          <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
+            <div className="flex items-start">
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
+                <span className="text-lg">🏪</span>
+              </div>
+              <div className="flex-1">
+                <div className="text-[#d9c98f] text-sm">Marketed By:</div>
+                <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Niyach Crop Sciences</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-0.5">
+                  Plot No.I-1, Shop No.3,<br/>
+                  APMC Yard, Amargol,<br/>
+                  2nd Main Road, Hubballi,<br/>
+                  Dharwad District, Karnataka - 580025
+                </div>
+                <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 6360638457</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: niyachcropscienceskar@gmail.com</div>
               </div>
             </div>
           </StarBorder>
@@ -235,8 +285,8 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Customer Care</div>
-                <div className="text-white/90 text-sm sm:text-base">+91 9632197140</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Email: esktechnocorporation@gmail.com</div>
+                <div className="text-white/90 text-sm sm:text-base">+91 6360638457</div>
+                <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: niyachcropscienceskar@gmail.com</div>
               </div>
             </div>
           </StarBorder>
