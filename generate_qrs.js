@@ -2,27 +2,29 @@ import fs from 'fs';
 import path from 'path';
 import QRCode from 'qrcode';
 import PDFDocument from 'pdfkit';
-import { PRODUCTS, SLUG_TO_BRAND } from './src/productsData.js';
+import { PRODUCTS } from './src/productsData.js';
 
-const domain = 'https://rk-liart-nine.vercel.app';
-const outputDir = path.join(process.cwd(), 'qr code');
+const domain = 'https://ncs-lilac.vercel.app';
+const outputDir = path.join(process.cwd(), 'qr_codes');
 
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
 async function generateQRPDFs() {
-  for (const product of PRODUCTS) {
-    // Generate the slug the same way as productsData.js
-    const slug = product.brand.replace(/ /g, '-');
+  console.log(`Generating QR Code PDFs for ${PRODUCTS.length} products...`);
+
+  for (let i = 0; i < PRODUCTS.length; i++) {
+    const product = PRODUCTS[i];
+    const slug = product.slug || product.brand.replace(/[,_/+\s]+/g, '-').replace(/-+/g, '-').trim();
     const url = `${domain}/${slug}`;
-    const safeBrandName = product.brand.replace(/[/\\?%*:|"<>]/g, '-'); // Sanitize filename
+    const safeBrandName = product.brand.replace(/[/\\?%*:|"<>]/g, '-').replace(/\s+/g, ' ').trim();
     const pdfPath = path.join(outputDir, `${safeBrandName}.pdf`);
 
     try {
       // 1. Generate QR Code as Data URI (PNG)
       const qrDataURI = await QRCode.toDataURL(url, {
-        width: 400,
+        width: 380,
         margin: 2,
         color: {
           dark: '#000000',
@@ -34,38 +36,64 @@ async function generateQRPDFs() {
       const base64Data = qrDataURI.replace(/^data:image\/png;base64,/, "");
       const qrBuffer = Buffer.from(base64Data, 'base64');
 
-      // 2. Create PDF
-      const doc = new PDFDocument({ size: 'A4', margin: 50 });
+      // 2. Create PDF (A4 size: 595.28 x 841.89 pt)
+      const doc = new PDFDocument({ size: 'A4', margin: 40 });
       const stream = fs.createWriteStream(pdfPath);
       doc.pipe(stream);
 
-      // Add Title
-      doc.fontSize(24)
+      // Title
+      doc.fontSize(22)
          .font('Helvetica-Bold')
-         .text(`${product.brand}`, { align: 'center' });
+         .fillColor('#111827')
+         .text(product.displayName || product.brand, { align: 'center' });
+      
+      doc.moveDown(0.5);
+
+      // Category & Specification
+      if (product.specification) {
+        doc.fontSize(12)
+           .font('Helvetica-Bold')
+           .fillColor('#374151')
+           .text(product.specification, { align: 'center' });
+      }
+
+      if (product.category) {
+        doc.moveDown(0.2);
+        doc.fontSize(10)
+           .font('Helvetica-Oblique')
+           .fillColor('#6B7280')
+           .text(`(${product.category})`, { align: 'center' });
+      }
       
       doc.moveDown(1);
       
-      doc.fontSize(12)
+      doc.fontSize(11)
          .font('Helvetica')
-         .text(`Scan the QR code below to view the product page:`, { align: 'center' });
+         .fillColor('#4B5563')
+         .text('Scan the QR code below to view the official product registration page:', { align: 'center' });
       
-      doc.moveDown(2);
+      doc.moveDown(1);
 
-      // Add QR Code image to PDF
-      // Center the 400x400 image on A4 (595 x 842)
-      doc.image(qrBuffer, (595 - 400) / 2, doc.y, { width: 400 });
+      // Center the 380x380 QR Code on A4 width (595.28)
+      const qrX = (595.28 - 380) / 2;
+      doc.image(qrBuffer, qrX, doc.y, { width: 380 });
 
-      doc.moveDown(20);
+      doc.y += 390;
 
-      doc.fontSize(10)
-         .fillColor('blue')
+      // Link text
+      doc.fontSize(11)
+         .font('Helvetica-Bold')
+         .fillColor('#2563EB')
          .text(url, { align: 'center', link: url });
 
       doc.end();
 
-      await new Promise((resolve) => stream.on('finish', resolve));
-      console.log(`Created PDF for ${product.brand} -> ${pdfPath}`);
+      await new Promise((resolve, reject) => {
+        stream.on('finish', resolve);
+        stream.on('error', reject);
+      });
+
+      console.log(`[${i + 1}/${PRODUCTS.length}] Created: ${safeBrandName}.pdf`);
     } catch (error) {
       console.error(`Error generating PDF for ${product.brand}:`, error);
     }
@@ -73,5 +101,5 @@ async function generateQRPDFs() {
 }
 
 generateQRPDFs().then(() => {
-  console.log('All QR code PDFs generated successfully!');
+  console.log(`\nSuccessfully generated all ${PRODUCTS.length} QR code PDFs in: ${outputDir}`);
 }).catch(console.error);
