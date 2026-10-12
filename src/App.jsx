@@ -91,12 +91,12 @@ export default function App() {
             className="max-h-screen w-auto"
             src="/intro take 4.mp4"
             autoPlay
-            loop
             muted={false}
             playsInline
             preload="auto"
             poster="/new.jpeg"
             controls
+            onEnded={() => setShowIntro(false)}
           />
           <button
             className="absolute top-4 right-4 px-4 py-2 rounded-md bg-white/10 border border-white/30 text-white hover:bg-white/20"
